@@ -22,7 +22,7 @@ function getMessage(array, expected, actual) {
   return arraySegment + message + actual;
 }
 
-function testStrictlyDescending(array, expected) {
+function testStrictlyAscending(array, expected) {
   const actual = isStrictlyAscending(array);
   const status = actual === expected ? "✅" : "❌";
   const content = getMessage(array, expected, actual);
@@ -31,14 +31,14 @@ function testStrictlyDescending(array, expected) {
 }
 
 function testAll() {
-  testStrictlyDescending([1, 3, 4, 5, 16], true);
-  testStrictlyDescending([12, 13, 4, 5, 16], false);
-  testStrictlyDescending([1, 3, 2, 4], false);
-  testStrictlyDescending([2, 4, 6], true);
-  testStrictlyDescending([2, 2, 2], false);
-  testStrictlyDescending([1, 3, 3, 4], false);
-  testStrictlyDescending([2], true);
-  testStrictlyDescending([], true);
+  testStrictlyAscending([1, 3, 4, 5, 16], true);
+  testStrictlyAscending([12, 13, 4, 5, 16], false);
+  testStrictlyAscending([1, 3, 2, 4], false);
+  testStrictlyAscending([2, 4, 6], true);
+  testStrictlyAscending([2, 2, 2], false);
+  testStrictlyAscending([1, 3, 3, 4], false);
+  testStrictlyAscending([2], true);
+  testStrictlyAscending([], true);
 }
 
 testAll();
